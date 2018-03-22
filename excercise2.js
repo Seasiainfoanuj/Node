@@ -19,11 +19,11 @@ module.exports = () => {
         if (err) throw err;
 });
 
-    while (numbersList.length < 99) {
+    while (numbersList.length < 10000000) {
         let randomNumber = Math.floor(Math.random() * 99) + 1;
-        if (numbersList.indexOf(randomNumber) < 0) {
-            numbersList.push(randomNumber + '\n');
-        }
+			if (numbersList.indexOf(randomNumber) < 0) {
+				numbersList.push(randomNumber + '\n');
+			}
         fs.appendFileSync('random_number.txt', randomNumber + '\n');
     }
 
